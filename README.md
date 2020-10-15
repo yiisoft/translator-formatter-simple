@@ -21,7 +21,7 @@ The package ...
 The package could be installed with composer:
 
 ```
-composer install yiisoft/translator-formatter-simple
+composer require yiisoft/translator-formatter-simple
 ```
 
 ## General usage
