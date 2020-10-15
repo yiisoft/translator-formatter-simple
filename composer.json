@@ -1,23 +1,25 @@
 {
-    "name": "yiisoft/_____",
+    "name": "yiisoft/translator-formatter-simple",
     "type": "library",
-    "description": "_____",
+    "description": "Yii simple message formatter",
     "keywords": [
-        "_____"
+        "formatter",
+        "formatting"
     ],
     "homepage": "https://www.yiiframework.com/",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/_____/issues?state=open",
+        "issues": "https://github.com/yiisoft/translator-formatter-simple/issues?state=open",
         "forum": "https://www.yiiframework.com/forum/",
         "wiki": "https://www.yiiframework.com/wiki/",
         "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/_____"
+        "source": "https://github.com/yiisoft/translator-formatter-simple"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "yiisoft/translator": "dev-master"
     },
     "require-dev": {
         "infection/infection": "^0.16.3",
@@ -26,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Yiisoft\\_____\\": "src"
+            "Yiisoft\\Translator\\Formatter\\Simple\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yiisoft\\_____\\Tests\\": "tests"
+            "Yiisoft\\Translator\\Formatter\\Simple\\Tests\\": "tests"
         }
     },
     "extra": {
