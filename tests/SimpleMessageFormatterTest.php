@@ -32,6 +32,7 @@ class SimpleMessageFormatterTest extends TestCase
 
     /**
      * @dataProvider optionsProvider
+     *
      * @param string $expected
      * @param string $pattern
      * @param array $params
