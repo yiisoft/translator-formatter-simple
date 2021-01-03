@@ -40,22 +40,22 @@ $additionalCategory = new Yiisoft\Translator\Category(
 $translator->addCategorySource($additionalCategory);
 
 $translator->translate('Test string: {str}', ['str' => 'string data'], 'moduleId', 'en');
-// output Test string: string data
+// output: Test string: string data
 ```
 
 ### Example of usage without `yiisoft/translator` package
 ```php
 
-/** @var Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter $formatter */
+/** @var \Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter $formatter */
 $pattern = 'Test number: {number}';
 $params = ['number' => 5];
 echo $formatter->format($pattern, $params);
-// output:  Test number: 5
+// output: Test number: 5
 
 $pattern = 'Test string: {str}';
 $params = ['str' => 'string data'];
 echo $formatter->format($pattern, $params);
-// output:  Test string: string data 
+// output: Test string: string data 
 ```
 
 ## Unit testing
