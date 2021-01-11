@@ -2,9 +2,11 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://github.com/yiisoft.png" height="100px">
     </a>
-    <h1 align="center">Yii simple message formatter</h1>
-    <br>
 </p>
+<h1 align="center">Yii simple message formatter</h1>
+
+This package allow to format messages in simple mode.
+When translating a message, you can embed some placeholders and have them replaced by dynamic parameter values.
 
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/translator-formatter-simple/v/stable.png)](https://packagist.org/packages/yiisoft/translator-formatter-simple)
 [![Total Downloads](https://poser.pugx.org/yiisoft/translator-formatter-simple/downloads.png)](https://packagist.org/packages/yiisoft/translator-formatter-simple)
@@ -13,8 +15,6 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/yiisoft/translator-formatter-simple/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/translator-formatter-simple/?branch=master)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2Ftranslator-formatter-simple%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/translator-formatter-simple/master)
 [![static analysis](https://github.com/yiisoft/translator-formatter-simple/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/translator-formatter-simple/actions?query=workflow%3A%22static+analysis%22)
-
-The package ...
 
 ## Installation
 
@@ -26,6 +26,37 @@ composer require yiisoft/translator-formatter-simple
 
 ## General usage
 
+### Example of usage with `yiisoft/translator`
+```php
+/** @var \Yiisoft\Translator\Translator $translator **/
+
+$categoryName = 'moduleId';
+$pathToModuleTranslations = './module/messages/';
+$additionalCategory = new Yiisoft\Translator\Category(
+    $categoryName, 
+    new \Yiisoft\Translator\Message\Php\MessageSource($pathToModuleTranslations),
+    new \Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter()
+);
+$translator->addCategorySource($additionalCategory);
+
+$translator->translate('Test string: {str}', ['str' => 'string data'], 'moduleId', 'en');
+// output: Test string: string data
+```
+
+### Example of usage without `yiisoft/translator` package
+```php
+
+/** @var \Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter $formatter */
+$pattern = 'Test number: {number}';
+$params = ['number' => 5];
+echo $formatter->format($pattern, $params);
+// output: Test number: 5
+
+$pattern = 'Test string: {str}';
+$params = ['str' => 'string data'];
+echo $formatter->format($pattern, $params);
+// output: Test string: string data 
+```
 
 ## Unit testing
 
