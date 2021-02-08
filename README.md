@@ -32,7 +32,7 @@ composer require yiisoft/translator-formatter-simple
 
 $categoryName = 'moduleId';
 $pathToModuleTranslations = './module/messages/';
-$additionalCategory = new Yiisoft\Translator\Category(
+$additionalCategory = new Yiisoft\Translator\CategorySource(
     $categoryName, 
     new \Yiisoft\Translator\Message\Php\MessageSource($pathToModuleTranslations),
     new \Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter()
@@ -49,12 +49,13 @@ $translator->translate('Test string: {str}', ['str' => 'string data'], 'moduleId
 /** @var \Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter $formatter */
 $pattern = 'Test number: {number}';
 $params = ['number' => 5];
-echo $formatter->format($pattern, $params);
+$locale = 'en';
+echo $formatter->format($pattern, $params, $locale);
 // output: Test number: 5
 
 $pattern = 'Test string: {str}';
 $params = ['str' => 'string data'];
-echo $formatter->format($pattern, $params);
+echo $formatter->format($pattern, $params, $locale);
 // output: Test string: string data 
 ```
 
