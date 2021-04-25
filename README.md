@@ -24,6 +24,23 @@ The package could be installed with composer:
 composer require yiisoft/translator-formatter-simple
 ```
 
+## Configuration
+
+Example of config, if you not use package [`yiisoft/config`](http://github.com/yiisoft/config)
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Yiisoft\Translator\MessageFormatterInterface;
+use Yiisoft\Translator\Formatter\Simple\SimpleMessageFormatter;
+
+return [
+    MessageFormatterInterface::class => SimpleMessageFormatter::class,
+];
+```
+
 ## General usage
 
 ### Example of usage with `yiisoft/translator`
