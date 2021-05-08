@@ -16,7 +16,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="Yii translator formatter simple tests">
+        <testsuite name="Yii Translator Simple Message Formatter tests">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

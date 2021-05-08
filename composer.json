@@ -1,7 +1,7 @@
 {
     "name": "yiisoft/translator-formatter-simple",
     "type": "library",
-    "description": "Yii simple message formatter",
+    "description": "Yii Translator Simple Message Formatter",
     "keywords": [
         "formatter",
         "formatting"
